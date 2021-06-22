@@ -14,13 +14,13 @@ int main()
         /* move '\n' and '\0' one character to the left each time if the
          * character before '\n' is a blank or a tab
          */
-        while (line[i] == ' ' || line[i] == '\t') {
+        while (i >= 0 && (line[i] == ' ' || line[i] == '\t')) {
             line[i] = '\n';
             line[i + 1] = '\0';
             --len;
             --i;
         }
-        if (len > 1) /* delete blank lines */
+        if (len > 1) /* ignore blank lines */
             printf("%s", line);
     }
 
