@@ -2,7 +2,7 @@
  * entirely blank lines.
  */
 #include <stdio.h>
-#include "line.h"
+#include "../../include/line.h"
 
 int main()
 {

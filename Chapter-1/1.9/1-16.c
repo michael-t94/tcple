@@ -2,7 +2,7 @@
  * and as much as possible of the text.
  */
 #include <stdio.h>
-#include "line.h"
+#include "../../include/line.h"
 
 int main()
 {

@@ -1,6 +1,6 @@
 /* Reverses the input one line a time */
 #include <stdio.h>
-#include "line.h"
+#include "../../include/line.h"
 
 int main()
 {

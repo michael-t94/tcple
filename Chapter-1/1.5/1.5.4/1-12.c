@@ -5,9 +5,8 @@
  */
 
 #include <stdio.h>
+#include "../../../include/line.h"
 
-#define IN 1    /* inside a word */
-#define OUT 0   /* outside a word */
 int main()
 {
     int state = OUT;

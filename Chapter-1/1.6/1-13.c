@@ -5,7 +5,7 @@
  */
 
 #include <stdio.h>
-#include "hist.h"
+#include "../../include/line.h"
 
 void chist(size_t *hist);
 

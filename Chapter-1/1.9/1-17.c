@@ -2,7 +2,7 @@
  * greater than 80.
  */
 #include <stdio.h>
-#include "line.h"
+#include "../../include/line.h"
 
 int main()
 {
