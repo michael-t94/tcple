@@ -1,4 +1,8 @@
-/* Reverses the input one line a time */
+/* reverse.c 
+ *
+ * Reverse the input one line a time
+ */
+
 #include <stdio.h>
 #include "../../include/line.h"
 

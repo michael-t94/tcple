@@ -1,6 +1,7 @@
 /* Same as 1-16.c, except that this program only prints the line with length
  * greater than 80.
  */
+
 #include <stdio.h>
 #include "../../include/line.h"
 

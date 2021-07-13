@@ -1,4 +1,4 @@
-/* computes the histogram of lengths of words in input */
+/* compute the histogram of lengths of words in input */
 
 #include <stdio.h>
 #include "../../include/line.h"

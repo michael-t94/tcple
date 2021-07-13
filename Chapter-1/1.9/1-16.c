@@ -1,4 +1,4 @@
-/* Reads one line a time from input, prints the length of arbitrary long lines
+/* Read one line a time from input, print the length of arbitrary long lines
  * and as much as possible of the text.
  */
 #include <stdio.h>

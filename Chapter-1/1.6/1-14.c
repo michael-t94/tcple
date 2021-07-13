@@ -1,4 +1,4 @@
-/* Prints the word-lengt histogram horizontally */
+/* Print the word-lengt histogram horizontally */
 
 #include <stdio.h>
 #include "../../include/line.h"

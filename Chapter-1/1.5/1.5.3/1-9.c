@@ -1,4 +1,7 @@
-/* copy input to output and replace a sequence of blanks with one blank */
+/* sblank.c
+ *
+ * copy input to output and replace a sequence of blanks with one blank
+ */
 
 #include <stdio.h>
 

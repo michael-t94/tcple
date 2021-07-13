@@ -1,4 +1,7 @@
-/* count blanks, newlines and tabs */
+/* count.c
+ *
+ * count blanks, newlines and tabs
+ */
 
 #include <stdio.h>
 

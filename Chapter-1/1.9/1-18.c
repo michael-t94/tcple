@@ -1,6 +1,7 @@
-/* Removes trailing blanks and tabs from each line of input, and deletes
+/* Remove trailing blanks and tabs from each line of input, and delete
  * entirely blank lines.
  */
+
 #include <stdio.h>
 #include "../../include/line.h"
 
