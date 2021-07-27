@@ -1,49 +1,67 @@
-/* Print the word-lengt histogram horizontally */
+/* Print the histogram of the frequencies of different characters in its input.
+ * The program computes frequencies for characters from 32 to 126 which are
+ * printable, and for character TAB, NL(newline), VF(vertical tab), CR(carriage
+ * return).
+ */
 
 #include <stdio.h>
-#include "../../include/line.h"
 
-void chist(size_t *hist);
+#define HEIGHT 100 /* maximum histogram height */
 
 int main()
 {
-    size_t hist[MAXLENGTH + 1];
+    size_t hist[99];
+    int c;
 
-    chist(hist);
+    for (int i = 0; i < 99; ++i) hist[i] = 0;
 
-    printf("Length of %ld word(s) exceed(s) %d\n", hist[0], MAXLENGTH);
-    printf("Horizontal Histogram\n");
+    /* compute histogram */
+    while ((c = getchar()) != EOF) {
+        switch (c) {
+            case '\t':
+                ++hist[0];
+                break;
+            case '\n':
+                ++hist[1];
+                break;
+            case '\v': /* vertical tab */
+                ++hist[2];
+                break;
+            case '\r': /* carriage return */
+                ++hist[3];
+                break;
+            default:
+                ++hist[c - 28];
+        }
+    }
 
-    /* use maximum height as the height of the histogram */
-    size_t max = hist[1];
-    for (int i = 1; i <= MAXLENGTH; ++i) {
+    /* find max value of histogram */
+    int max = 0;
+    for (int i = 0; i < 99; ++i) {
         if (max < hist[i])
             max = hist[i];
     }
 
-    /* print the histogram horizontally */
-    for (int i = 0; i < max; ++i) {
-        for (int j = 1; j <= MAXLENGTH; ++j){
-            if (i < max - hist[j])
-                printf("   ");
-            else
-                printf("__ "); /* '__' represents histogram bar */
-        }
+    /* print histogram */
+    printf("%5ld TAB ", hist[0]);
+    for (int i = 0; i < (double)hist[0] / max * HEIGHT; ++i)
+        putchar('|');
+    printf("\n%5ld  NL ", hist[1]);
+    for (int i = 0; i < (double)hist[1] / max * HEIGHT; ++i)
+        putchar('|');
+    printf("\n%5ld  VT ", hist[2]);
+    for (int i = 0; i < (double)hist[2] / max * HEIGHT; ++i)
+        putchar('|');
+    printf("\n%5ld  CR ", hist[3]);
+    for (int i = 0; i < (double)hist[3] / max * HEIGHT; ++i)
+        putchar('|');
+    putchar('\n');
+    for (int i = 4; i < 99; ++i) {
+        printf("%5ld '%c' ", hist[i], i + 28);
+        for (int j = 0; j < (double)hist[i] / max * HEIGHT; ++j)
+            putchar('|');
         putchar('\n');
     }
 
-    /* print each bin number below the histogram */
-    for (int i = 1; i <= MAXLENGTH; ++i) {
-        printf("%02d ", i);
-    }
-    printf("\n\n");
-
-    /* at last print the value of each bin */
-    for (int i = 1; i <= MAXLENGTH; ++i) {
-        printf("%2ld ", hist[i]);
-    }
-    putchar('\n');
-
     return 0;
 }
-
